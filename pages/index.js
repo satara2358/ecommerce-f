@@ -1,10 +1,11 @@
 import React from 'react'
-import '../styles/globals.css';
+// import '../styles/globals.css';
+import { Product, FooterBanner, HeroBanner } from '../components'
 
 const Home = () => {
   return (
-    <>
-      HeroBanner
+    <div>
+      <HeroBanner />
       <div className='products-heading'>
         <h2>cualquier cosa</h2>
         <p>otra cosa</p>
@@ -14,8 +15,8 @@ const Home = () => {
         {['Product 1', 'Product 2'].map(
           (product) => product)}
       </div>
-      Footer
-    </>
+      <FooterBanner />
+    </div>
   )
 }
 

@@ -9,4 +9,3 @@ const FooterBanner = () => {
 }
 
 export default FooterBanner
-fa
