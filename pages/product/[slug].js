@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { client, urlFor } from '../../lib/client';
+import React, { useState } from 'react';
+import { client, urlFor } from '../../lib/client.js';
 import { AiFillStar, AiOutlineMinus, AiOutlinePlus, AiOutlineStar } from 'react-icons/ai';
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
@@ -8,7 +8,7 @@ import { useStateContext } from '../../context/StateContext';
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd } = useStateContext
+  const { decQty, incQty, qty, onAdd } = useStateContext();
 
 
   // const handleBuyNow = () => {
@@ -48,9 +48,7 @@ const ProductDetails = ({ product, products }) => {
               <AiFillStar />
               <AiOutlineStar />
             </div>
-            <p>
-              (20)
-            </p>
+            <p>(20)</p>
           </div>
           <h4>Details: </h4>
           <p>{details}</p>
@@ -64,14 +62,14 @@ const ProductDetails = ({ product, products }) => {
             </p>
           </div>
           <div className="buttons">
-            <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>Add to Cart</button>
-            <button type="button" className="buy-now" onClick="">Buy Now</button>
+            <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>Agregar</button>
+            <button type="button" className="buy-now" onClick="">Comprar</button>
           </div>
         </div>
       </div>
 
       <div className="maylike-products-wrapper">
-          <h2>You may also like</h2>
+          <h2>Elige el que + te guste</h2>
           <div className="marquee">
             <div className="maylike-products-container track">
               {products.map((item) => (
@@ -89,8 +87,7 @@ export const getStaticPaths = async () => {
     slug {
       current
     }
-  }
-  `;
+  }`;
 
   const products = await client.fetch(query);
 
