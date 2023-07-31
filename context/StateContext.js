@@ -35,7 +35,7 @@ export const StateContext = ({ children }) => {
       setCartItems([...cartItems, { ...product }]);
     }
 
-    toast.success(`${qty} ${product.name} en el carrito de compra.`);
+    toast.success(`${qty} ${product.name} carrito de compra.`);
   } 
 
   const onRemove = (product) => {
