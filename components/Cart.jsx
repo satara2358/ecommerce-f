@@ -5,8 +5,8 @@ import { TiDeleteOutline } from 'react-icons/ti';
 import toast from 'react-hot-toast';
 
 import { useStateContext } from '../context/StateContext';
-import { urlFor } from '../lib/client';
-import getStripe from '../lib/getStripe';
+import { urlFor } from '../lib/client.js';
+import getStripe from '../lib/getStripe.js';
 
 const Cart = () => {
   const cartRef = useRef();
@@ -20,7 +20,7 @@ const Cart = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(cartItems),
+      body: JSON.stringify(cartItems)
     });
 
     if(response.statusCode === 500) return;
@@ -99,7 +99,7 @@ const Cart = () => {
             </div>
             <div className="btn-container">
               <button type="button" className="btn" onClick={handleCheckout}>
-                Pay with Stripe
+                Pay with PSE
               </button>
             </div>
           </div>
